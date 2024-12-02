@@ -30,21 +30,18 @@ const Dining = () => {
 
       <div className="text-container">
         <h1 className="heading center">
-          INDULGE IN LUXURIOUS SPA TREATMENTS FOR ULTIMATE RELAXATION
+SAVOR EXQUISITE FLAVORS IN A LUXURIOUS DINING EXPERIENCE
+
         </h1>
         <div>
-          <p>
-            Rejuvenate your mind, body, and spirit at our serene spa retreat.
-            <br />
-            Experience the healing power of expertly crafted treatments,
-            designed to relieve stress and promote wellness.
-            <br />
-            From soothing massages to invigorating facials, our spa offers a
-            range of services tailored to your needs.
-            <br />
-            Immerse yourself in tranquility and emerge feeling refreshed,
-            revitalized, and ready to take on the world.
-          </p>
+        <p>
+  Indulge in a culinary journey like no other at our world-class dining establishment. <br />
+  Experience a symphony of flavors crafted by expert chefs, using only the finest ingredients. <br />
+  From gourmet dishes to exquisite desserts, each meal is a celebration of taste and artistry. <br />
+  Whether you're seeking an intimate dinner or a vibrant gathering with friends, our restaurant offers the perfect setting for every occasion. <br />
+  Immerse yourself in luxury and let your taste buds explore the ultimate in fine dining.
+</p>
+
         </div>
       </div>
 
