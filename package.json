@@ -1,0 +1,26 @@
+{
+  "name": "ot-booking-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "npm run start --prefix client",
+    "admin": "npm run start --prefix admin",
+    "dev-admin": "cocurrrently \"npm run server\"\"npm run admin\"",
+    "dev-client": "cocurrrently \"npm run server\"\"npm run client\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cookieparser": "^0.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.1",
+    "react-router-dom": "^6.28.0"
+  }
+}

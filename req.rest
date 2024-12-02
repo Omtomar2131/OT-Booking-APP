@@ -1,0 +1,15 @@
+###
+
+GET http://localhost:5000/api/rooms
+###
+POST http://localhost:5000/api/rooms
+Content-Type: application/json
+{
+  "name": "Deluxe Suite",
+  "type": "Suite",
+  "price": 250,
+  "capacity": 4,
+  "description": "A spacious deluxe suite with a great view.",
+  "available": true
+}
+

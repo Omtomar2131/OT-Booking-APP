@@ -1,0 +1,115 @@
+.room-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  color: #333; // Dark text color for contrast
+  min-height: 100vh;
+
+  .error-message {
+    background-color: #ff4d4f; // Bright red for error background
+    color: #ffffff; // White text for contrast
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .loading-message {
+    font-size: 1.5rem;
+    color: #6c757d; // Gray for loading text
+  }
+
+  .room-content {
+    text-align: center;
+    width: 80%; // Card width set to 80% of the screen
+    max-width: 1200px; // Limit maximum width for large screens
+    margin: 0 auto;
+    background-color: #ffffff; // White box background
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); // More prominent shadow
+
+    .room-heading {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      color: #333; // Accent color for headings
+      border-bottom: 2px solid #080808; // Strong underline
+      padding-bottom: 0.5rem;
+    }
+
+    .room-img-wrapper {
+      margin: 1.5rem 0;
+      height: auto; // Adjust to fit content
+      max-height: 500px; // Limit max height for images
+      overflow: hidden; // Prevent image overflow
+
+      img {
+        width: 100%; // Image takes full width of its container
+        height: 100%; // Ensure full coverage of container height
+        object-fit: cover; // Maintain aspect ratio while covering the area
+        border: 1px solid #e9ecef; // Light border
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow
+      }
+    }
+
+    .room-description {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #555; // Subtle dark gray for text
+      line-height: 1.5; // Improve readability
+    }
+
+    .room-price {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #28a745; // Green for pricing
+      margin-bottom: 2rem;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem; // Add spacing between buttons
+      flex-wrap: wrap; // Allow buttons to wrap on smaller screens
+    }
+
+    .edit {
+      width: 48%; // Adjust width to 48% for equal spacing with .button
+      background-color: #333; // Black background
+      color: #fff; // White text
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      text-align: center;
+      border: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #555; // Slightly lighter black on hover
+      }
+    }
+
+    .button {
+      width: 40%; // Adjust width to 48% for equal spacing with .edit
+      background-color: #ff4d4f; // Red background
+      color: #fff; // White text
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #e63946; // Darker red on hover
+      }
+    }
+  }
+}

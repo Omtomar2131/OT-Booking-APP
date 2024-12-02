@@ -1,0 +1,63 @@
+.main-s{
+  height: 30vh;
+
+}
+.success {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg, #c88e3f, #555);  // Updated gradient with c88e3f
+  color: white;  // White text for contrast
+  padding: 15px 30px;  // Adjusted padding for size
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  // Slightly stronger shadow for emphasis
+  margin-top: 15%;  // Adjusted margin for vertical centering
+  margin-left: 30%;  // Adjusted margin for better centering
+  text-align: center;
+  transform: translate(-50%, -50%);  // Ensures it stays centered
+  width: 40%;  // Smaller width for the box
+  animation: fadeIn 2s ease-out, pulse 1.5s infinite alternate;
+  z-index: 1000;  // Keeps it on top of other elements
+
+  .heading {
+    font-size: 2rem;  // Adjusted font size
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;  // Adjusted letter spacing
+    animation: textShine 2s ease-in-out infinite;
+    margin: 0;  // Ensures no margin
+  }
+
+  // Pulse animation to make the text dynamic
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);  // Slight pulse effect
+    }
+  }
+
+  // Fade-in animation for the container
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  // Text shine animation for a glowing effect
+  @keyframes textShine {
+    0% {
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+      text-shadow: 0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.3);
+    }
+  }
+}

@@ -1,0 +1,91 @@
+#booking {
+    color: #222; // Deep gray for text
+    font-family: 'Arial', sans-serif;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  
+    .heading {
+      font-size: 2.5rem;
+      color: #111;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+    }
+  
+    .content-wrapper {
+      background: #fff; // White card background
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      padding: 2rem;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      .text-wrapper {
+        width: 100%;
+        margin-bottom: 1.5rem;
+  
+        .heading {
+          font-size: 2rem;
+          color: #111;
+          text-align: left;
+          margin-bottom: 1rem;
+          border-bottom: 2px solid #ddd;
+          padding-bottom: 0.5rem;
+        }
+  
+        .email {
+          font-size: 1rem;
+          color: #555;
+          margin-bottom: 0.5rem;
+  
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+  
+      .cta-wrapper {
+        display: flex;
+        gap: 1rem;
+  
+        button {
+          background: #111;
+          color: #fff;
+          border: none;
+          padding: 0.75rem 1.5rem;
+          border-radius: 4px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+  
+          &:hover {
+            background: #222;
+            transform: translateY(-2px);
+          }
+  
+          &.danger {
+            background: #b00;
+            color: #fff;
+  
+            &:hover {
+              background: #900;
+            }
+          }
+        }
+      }
+    }
+  
+    .center {
+      text-align: center;
+    }
+  }
+  

@@ -1,0 +1,79 @@
+.room-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; // Space between rooms
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .room-cont {
+    width: 80%; // Default for larger screens
+    height: 500px; // Default for larger screens
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  
+    .room-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+    }
+  
+    .img-cont {
+      width: 100%;
+      margin-top: 20px;
+      height: 70vh; // Reserve space for name and button
+      overflow: hidden;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  
+    .book-now-btn {
+      display: inline-block;
+      background-color: #c88e3f;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 0.8rem 1.5rem;
+      text-align: center;
+      border: none;
+      border-radius: 5px;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+      text-decoration: none;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: #6c4e24;
+      }
+    }
+  }
+  
+  /* Responsive Styles for Mobile */
+  @media (max-width: 768px) {
+    .room-container {
+      width: 90%; // Adjust width for smaller screens
+      height: auto; // Allow height to adjust based on content
+    }
+  
+    .img-container {
+      height: 50vh; // Reduce image height for smaller screens
+    }
+  
+    .room-name {
+      font-size: 1.2rem; // Adjust font size for mobile
+    }
+  
+    .book-now-btn {
+      font-size: 0.9rem; // Adjust button font size for mobile
+      padding: 0.6rem 1.2rem;
+    }
+  }
+  

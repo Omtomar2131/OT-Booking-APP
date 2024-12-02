@@ -1,0 +1,38 @@
+.room-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); // Responsive grid
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.room-card {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    .img-container {
+        width: 100%;
+        height: 150px; // Adjust height as needed
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; // Ensures the image fits the container
+        }
+    }
+
+    .room-name {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        color: #333;
+    }
+}

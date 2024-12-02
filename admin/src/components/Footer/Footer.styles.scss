@@ -1,0 +1,63 @@
+.footer {
+    background-color: #2d3436; /* Dark background for footer */
+    color: #ffffff; /* White text for contrast */
+    padding: 1rem;
+    text-align: center; /* Center text */
+    font-family: 'Arial', sans-serif; /* Font for footer */
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    margin-top: 50px; /* Space from the rest of the content */
+    z-index: 10;
+
+  
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+      p {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        color: #dfe6e9; /* Light gray color for the rights reserved text */
+      }
+  
+      .social-icons {
+        display: flex;
+        gap: 1.5rem; /* Space between social media icons */
+        
+        .social-icon {
+          font-size: 1.5rem;
+          color: #ffffff; /* White color for icons */
+          transition: color 0.3s ease;
+          
+          &:hover {
+            color: #007bff; /* Change color on hover */
+          }
+  
+          &.instagram:hover {
+            color: #e1306c; /* Instagram pink color */
+          }
+  
+          &.twitter:hover {
+            color: #1da1f2; /* Twitter blue color */
+          }
+  
+          &.facebook:hover {
+            color: #1877f2; /* Facebook blue color */
+          }
+        }
+      }
+    }
+  bottom: 0;
+  width: 100%;
+  
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .footer-content {
+        padding: 0 1rem; /* Add some padding for smaller screens */
+        text-align: center;
+      }
+    }
+  }
+  
