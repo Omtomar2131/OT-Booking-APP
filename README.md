@@ -26,11 +26,14 @@ A sleek and modern room booking application where users can sign up, log in, cre
 - MongoDB (for storing user data, rooms, and bookings)
 
 ##Usage
+
 ##Admin Side:
+
 Login with admin credentials.
 Create and manage rooms.
 View and manage all bookings made by clients.
 ###Client Side:
+
 Register and login to the app.
 Browse available rooms.
 Make bookings for rooms and view your booking history.
