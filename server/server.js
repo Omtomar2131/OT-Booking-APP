@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
+const cors = require('cors');  // <-- Import CORS
 const app = express();
 const connectDB = require('./config/db');
 const roomRoutes = require('./routes/roomRoutes');
@@ -14,9 +15,12 @@ connectDB();
 
 const port = process.env.PORT || 5000;
 
+// Setup CORS to allow all origins
+app.use(cors());  // <-- Enable CORS for all origins
+
 // Setup middlewares
-app.use(cookieParser()); // <-- Fixed here
-app.use(express.json());
+app.use(cookieParser()); // <-- Cookie parser middleware
+app.use(express.json());  // <-- JSON parsing middleware
 
 // Setup routes
 app.use("/auth", auth); // This is usually for login or JWT validation; check if it's needed here
