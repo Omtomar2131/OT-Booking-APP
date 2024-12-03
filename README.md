@@ -25,14 +25,14 @@ A sleek and modern room booking application where users can sign up, log in, cre
 - Express.js
 - MongoDB (for storing user data, rooms, and bookings)
 
-##Usage
+## Usage
 
-##Admin Side:
+### Admin Side:
 
 Login with admin credentials.
 Create and manage rooms.
 View and manage all bookings made by clients.
-###Client Side:
+### Client Side:
 
 Register and login to the app.
 Browse available rooms.
