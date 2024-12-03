@@ -16,7 +16,13 @@ connectDB();
 const port = process.env.PORT || 5000;
 
 // Setup CORS to allow all origins
-app.use(cors());  // <-- Enable CORS for all origins
+const corsOptions = {
+    origin: 'https://ot-booking-app-2.onrender.com/', // Replace with your actual frontend URL
+    origin: 'https://ot-booking-app-3.onrender.com/',
+    credentials: true, // Allow cookies to be sent with requests
+  };
+  
+app.use(cors(corsOptions));  // <-- Enable CORS for all origins
 
 // Setup middlewares
 app.use(cookieParser()); // <-- Cookie parser middleware
