@@ -18,7 +18,6 @@ const port = process.env.PORT || 5000;
 // Setup CORS to allow all origins
 const corsOptions = {
     origin: 'https://ot-booking-app-2.onrender.com/', // Replace with your actual frontend URL
-    origin: 'https://ot-booking-app-3.onrender.com/',
     credentials: true, // Allow cookies to be sent with requests
   };
   
