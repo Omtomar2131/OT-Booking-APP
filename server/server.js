@@ -1,40 +1,45 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
-const cors = require('cors');  // <-- Import CORS
-const app = express();
+const cors = require('cors');
 const connectDB = require('./config/db');
 const roomRoutes = require('./routes/roomRoutes');
-const { errorHandler } = require('./middleware/errorHandler');
 const bookingRoutes = require('./routes/bookingRoutes');
 const userRoutes = require('./routes/userRoutes');
 const cookieParser = require('cookie-parser');
 const { auth } = require('./middleware/authMiddleware');
+const { errorHandler } = require('./middleware/errorHandler');
+
+// Initialize app
+const app = express();
+const port = process.env.PORT || 5000;
 
 // Connect to the database
 connectDB();
 
-const port = process.env.PORT || 5000;
+// Setup CORS
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://ot-booking-app.onrender.com'], // Add local and deployed frontend URLs
+  credentials: true, // Allow cookies with requests
+}));
 
-// Setup CORS to allow all origins
-const corsOptions = {
-    origin: 'https://ot-booking-app-2.onrender.com/', // Replace with your actual frontend URL
-    origin: 'https://ot-booking-app-3.onrender.com/',
-    credentials: true, // Allow cookies to be sent with requests
-  };
-  
-app.use(cors(corsOptions));  // <-- Enable CORS for all origins
+// Middlewares
+app.use(cookieParser()); // Parse cookies
+app.use(express.json()); // Parse JSON bodies
 
-// Setup middlewares
-app.use(cookieParser()); // <-- Cookie parser middleware
-app.use(express.json());  // <-- JSON parsing middleware
+// Debugging Middleware (optional, for logs)
+app.use((req, res, next) => {
+  console.log(`Incoming request: ${req.method} ${req.url}`);
+  next();
+});
 
-// Setup routes
-app.use("/auth", auth); // This is usually for login or JWT validation; check if it's needed here
+// Routes
+app.use('/auth', auth); // Authentication middleware
 app.use('/api/rooms', roomRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/users', userRoutes);
 
-app.use(errorHandler); // Custom error handling middleware
+// Error Handler
+app.use(errorHandler);
 
-// Start server
-app.listen(port, () => console.log(`Listening on port ${port}`));
+// Start the server
+app.listen(port, () => console.log(`Server running on port ${port}`));
