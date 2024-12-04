@@ -35,7 +35,7 @@ const Spa = () => {
         </h1>
         <div>
           <p>
-            Escape to a world of tranquility at our luxurious spa, where relaxation meets rejuvenation. <br /> 
+            Escape to a world of tranquility at our luxurious spa, where relaxation meets rejuvenation. <br />
             Our expertly crafted wellness treatments are designed to refresh your body, calm your mind, and restore your spirit. <br />
             Indulge in a range of personalized spa therapies, from soothing massages to invigorating skin treatments. <br />
             Whether you're seeking relaxation or a detoxifying experience, our spa offers the perfect environment to unwind and rejuvenate in peace and luxury.
@@ -48,7 +48,7 @@ const Spa = () => {
         /* Wrapper for carousel section */
         .carousel-container {
           position: relative;
-          margin-top:30px;
+          margin-top: 30px;
           width: 100%;
           height: 80vh; /* Full viewport height */
           overflow: hidden; /* Hide overflowing content */
@@ -106,6 +106,42 @@ const Spa = () => {
           max-width: 800px;
           line-height: 1.6;
           color: #333; /* Use a neutral color for readability */
+        }
+
+        /* Responsive styles for mobile */
+        @media (max-width: 768px) {
+          .carousel-container {
+            height: 50vh; /* Reduce height for smaller screens */
+          }
+
+          .text-container .heading {
+            font-size: 1.5rem; /* Smaller font for heading */
+            margin-bottom: 15px;
+          }
+
+          .text-container p {
+            font-size: 0.9rem; /* Adjust font size for paragraph */
+            max-width: 90%; /* Use more screen space */
+            line-height: 1.5;
+          }
+
+          .text-container {
+            padding: 10px; /* Reduce padding */
+          }
+        }
+
+        @media (max-width: 480px) {
+          .carousel-container {
+            height: 40vh; /* Further reduce height for very small screens */
+          }
+
+          .text-container .heading {
+            font-size: 1.2rem; /* Even smaller font for heading */
+          }
+
+          .text-container p {
+            font-size: 0.8rem; /* Smaller paragraph text */
+          }
         }
       `}</style>
     </>

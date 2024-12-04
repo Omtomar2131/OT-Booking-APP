@@ -12,6 +12,7 @@
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto; /* Centers the header */
+    position: relative;
   }
 
   .logo {
@@ -55,7 +56,8 @@
       transition: background-color 0.3s ease;
       margin-left: 1.5rem; /* Add spacing to the left */
     }
-    .rooms-button{
+
+    .rooms-button {
       font-weight: 600;
       font-size: 18px;
       background: #c88e3f;
@@ -67,7 +69,7 @@
     .spa-button:hover {
       color: #c88e3f; /* Darker shade on hover */
     }
-    .rooms-button:hover{
+    .rooms-button:hover {
       color: #007bff;
     }
   }
@@ -75,17 +77,21 @@
   /* Mobile responsiveness */
   @media (max-width: 768px) {
     padding: 1rem; /* Reduce padding on mobile */
-
+    
     .container {
       flex-direction: column;
       align-items: flex-start; /* Align logo and nav items vertically */
       justify-content: center;
     }
 
+    .logo {
+      font-size: 1.8rem; /* Adjust logo size for smaller screens */
+    }
+
     nav {
       width: 100%; /* Make the navigation take full width on mobile */
       margin-top: 1rem;
-      display: flex;
+      display: none; /* Hide navigation by default */
       flex-direction: column;
       align-items: flex-start;
 
@@ -93,6 +99,40 @@
         margin-left: 0;
         margin-bottom: 1rem; /* Add spacing between links */
       }
+    }
+
+    /* Hamburger Icon for mobile */
+    .hamburger-icon {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+
+      .bar {
+        width: 30px;
+        height: 3px;
+        background-color: #936b34;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    /* Display the navigation when hamburger menu is active */
+    .nav-links.active {
+      display: flex;
+    }
+
+    /* Add transform effect for hamburger icon */
+    .hamburger-icon.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-icon.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-icon.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
     }
   }
 }

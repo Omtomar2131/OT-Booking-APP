@@ -30,18 +30,16 @@ const Dining = () => {
 
       <div className="text-container">
         <h1 className="heading center">
-SAVOR EXQUISITE FLAVORS IN A LUXURIOUS DINING EXPERIENCE
-
+          SAVOR EXQUISITE FLAVORS IN A LUXURIOUS DINING EXPERIENCE
         </h1>
         <div>
-        <p>
-  Indulge in a culinary journey like no other at our world-class dining establishment. <br />
-  Experience a symphony of flavors crafted by expert chefs, using only the finest ingredients. <br />
-  From gourmet dishes to exquisite desserts, each meal is a celebration of taste and artistry. <br />
-  Whether you're seeking an intimate dinner or a vibrant gathering with friends, our restaurant offers the perfect setting for every occasion. <br />
-  Immerse yourself in luxury and let your taste buds explore the ultimate in fine dining.
-</p>
-
+          <p>
+            Indulge in a culinary journey like no other at our world-class dining establishment. <br />
+            Experience a symphony of flavors crafted by expert chefs, using only the finest ingredients. <br />
+            From gourmet dishes to exquisite desserts, each meal is a celebration of taste and artistry. <br />
+            Whether you're seeking an intimate dinner or a vibrant gathering with friends, our restaurant offers the perfect setting for every occasion. <br />
+            Immerse yourself in luxury and let your taste buds explore the ultimate in fine dining.
+          </p>
         </div>
       </div>
 
@@ -108,6 +106,24 @@ SAVOR EXQUISITE FLAVORS IN A LUXURIOUS DINING EXPERIENCE
           max-width: 800px;
           line-height: 1.6;
           color: #333; /* Use a neutral color for readability */
+        }
+
+        /* Responsive styles for mobile */
+        @media (max-width: 768px) {
+          .carousel-container {
+            height: 50vh; /* Adjust height for smaller screens */
+          }
+
+          .text-container .heading {
+            font-size: 1.5rem; /* Smaller font size for headings */
+            margin-bottom: 15px;
+          }
+
+          .text-container p {
+            font-size: 1rem; /* Adjust paragraph font size */
+            line-height: 1.4; /* Reduce line spacing */
+            padding: 0 10px; /* Add horizontal padding */
+          }
         }
       `}</style>
     </>

@@ -41,7 +41,7 @@ const Home = () => {
           <img src="/images/spa.jpg" alt="SPA" className="spa-image" />
           <Link to="/spa" className="button">
             SPA AT OTR
-          </Link>{" "}
+          </Link>
         </div>
       </div>
 
@@ -52,7 +52,7 @@ const Home = () => {
             position: relative;
             width: 100%;
             height: 80vh;
-            margin-top:30px;
+            margin-top: 30px;
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -71,12 +71,12 @@ const Home = () => {
           }
 
           .carousel-image.active {
-            opacity: 2;
+            opacity: 1;
             z-index: 2;
           }
 
           .content-section {
-            margin-top:30px;
+            margin-top: 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -138,6 +138,36 @@ const Home = () => {
           .button:hover {
             background-color: #c88e3f;
             transform: translate(-50%, -50%) scale(1.05);
+          }
+
+          /* Mobile-specific styles */
+          @media (max-width: 768px) {
+            .carousel-container {
+              height: 60vh; /* Adjust height for smaller screens */
+            }
+
+            .content-heading {
+              font-size: 1.5rem; /* Smaller heading */
+              padding: 0 10px; /* Adjust padding */
+            }
+
+            .content-description {
+              font-size: 1rem; /* Reduce font size */
+              padding: 10px; /* Add padding for mobile */
+            }
+
+            .spa-section {
+              width: 100%; /* Take full width on mobile */
+            }
+
+            .spa-image {
+              width: 90%; /* Slightly smaller image */
+            }
+
+            .button {
+              font-size: 0.9rem; /* Adjust button font size */
+              padding: 8px 16px; /* Adjust padding for smaller button */
+            }
           }
         `}
       </style>

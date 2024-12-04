@@ -1,63 +1,91 @@
-.main-s{
+.main-s {
   height: 30vh;
-
 }
+
 .success {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(45deg, #c88e3f, #555);  // Updated gradient with c88e3f
-  color: white;  // White text for contrast
-  padding: 15px 30px;  // Adjusted padding for size
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  // Slightly stronger shadow for emphasis
-  margin-top: 15%;  // Adjusted margin for vertical centering
-  margin-left: 30%;  // Adjusted margin for better centering
+  background: linear-gradient(45deg, #c88e3f, #555); /* Updated gradient */
+  color: white; /* White text for contrast */
+  padding: 20px 40px; /* Slightly increased padding for better spacing */
+  border-radius: 15px; /* Softer rounded corners */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Stronger shadow for emphasis */
+  position: absolute; /* Position to enable centering */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the box */
   text-align: center;
-  transform: translate(-50%, -50%);  // Ensures it stays centered
-  width: 40%;  // Smaller width for the box
-  animation: fadeIn 2s ease-out, pulse 1.5s infinite alternate;
-  z-index: 1000;  // Keeps it on top of other elements
+  width: 50%; /* Flexible width for different screen sizes */
+  z-index: 1000; /* Keeps it above other elements */
+  animation: fadeIn 1.5s ease-out, pulse 1.5s infinite alternate;
+}
 
-  .heading {
-    font-size: 2rem;  // Adjusted font size
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;  // Adjusted letter spacing
-    animation: textShine 2s ease-in-out infinite;
-    margin: 0;  // Ensures no margin
+.success .heading {
+  font-size: 2rem; /* Maintains readability */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  animation: textShine 2s ease-in-out infinite;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .success {
+    width: 80%; /* Wider for smaller screens */
+    padding: 15px 20px; /* Adjust padding */
+    font-size: 0.9rem; /* Slightly smaller text */
   }
 
-  // Pulse animation to make the text dynamic
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.05);  // Slight pulse effect
-    }
+  .success .heading {
+    font-size: 1.5rem; /* Smaller heading size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .success {
+    width: 90%; /* Almost full width on very small screens */
+    padding: 10px 15px; /* Compact padding */
+    font-size: 0.8rem; /* Smaller text for readability */
   }
 
-  // Fade-in animation for the container
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.9);
-    }
-    100% {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
+  .success .heading {
+    font-size: 1.2rem; /* Even smaller heading size */
   }
+}
 
-  // Text shine animation for a glowing effect
-  @keyframes textShine {
-    0% {
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.3);
-    }
-    50% {
-      text-shadow: 0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.8);
-    }
-    100% {
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.3);
-    }
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05); /* Slight pulse effect */
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Text shine animation */
+@keyframes textShine {
+  0% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+      0 0 25px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(255, 255, 255, 1),
+      0 0 35px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+      0 0 25px rgba(255, 255, 255, 0.3);
   }
 }
