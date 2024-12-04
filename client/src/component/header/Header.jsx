@@ -17,8 +17,8 @@ const Header = () => {
           <h1 className='logo'>OT Resort</h1>
         </Link>
         
-        {/* Hamburger Icon */}
-        <div className="hamburger-icon" onClick={handleMenuToggle}>
+        {/* Hamburger Icon (Visible only on small screens) */}
+        <div className={`hamburger-icon ${isMenuOpen ? 'active' : ''}`} onClick={handleMenuToggle}>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>

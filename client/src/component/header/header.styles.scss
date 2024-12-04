@@ -107,6 +107,8 @@
       flex-direction: column;
       gap: 4px;
       cursor: pointer;
+      width: 30px;
+      height: 20px;
 
       .bar {
         width: 30px;
@@ -133,6 +135,13 @@
 
     .hamburger-icon.active .bar:nth-child(3) {
       transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+
+  /* Hide hamburger icon on larger screens */
+  @media (min-width: 769px) {
+    .hamburger-icon {
+      display: none; /* Hide hamburger icon on large screens */
     }
   }
 }
