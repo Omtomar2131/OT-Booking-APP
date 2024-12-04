@@ -1,58 +1,47 @@
-const express = require('express');
-const dotenv = require('dotenv').config();
-const cors = require('cors');
-const path = require('path'); // For serving static files
-const connectDB = require('./config/db');
-const roomRoutes = require('./routes/roomRoutes');
-const bookingRoutes = require('./routes/bookingRoutes');
-const userRoutes = require('./routes/userRoutes');
-const cookieParser = require('cookie-parser');
-const { auth } = require('./middleware/authMiddleware');
-const { errorHandler } = require('./middleware/errorHandler');
-
-// Initialize app
+const express = require("express");
+const path = require("path");
+const dotenv = require("dotenv").config();
+const cookieParser = require("cookie-parser");
+const connectDB = require("./config/db");
+const roomRoutes = require("./routes/roomRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
+const userRoutes = require("./routes/userRoutes");
+const { errorHandler } = require("./middleware/errorHandler");
+const cors = require("cors");
+const { auth, verifyAdmin } = require("./middleware/authMiddleware");
 const app = express();
-const port = process.env.PORT || 5000;
 
-// Connect to the database
+// setup middleware
+
+app.use(cookieParser());
+app.use(express.json());
+
+// connect to database
 connectDB();
 
-// Setup CORS
-const corsOptions = {
-    origin: '*', // Allow all origins
-    credentials: true, // Allow cookies with requests (if needed)
-  };
-  
-  app.use(cors(corsOptions));
-  
+// setup routes
 
-// Middlewares
-app.use(cookieParser()); // Parse cookies
-app.use(express.json()); // Parse JSON bodies
+// remove this later
+app.use("/api/rooms", roomRoutes);
+app.use("/api/bookings", bookingRoutes);
+app.use("/api/users", userRoutes);
 
-// Debugging Middleware (optional, for logs)
-app.use((req, res, next) => {
-  console.log(`Incoming request: ${req.method} ${req.url}`);
-  next();
-});
+if (process.env.NODE_ENV === "production") {
+  // define paths
+  const publicPath = path.join(__dirname,".", "./build");
+  const filePath = path.resolve(__dirname, ".", "build", "index.html");
 
-// Routes
-app.use('/auth', auth); // Apply authentication middleware for specific routes
-app.use('/api/rooms', roomRoutes);
-app.use('/api/bookings', bookingRoutes);
-app.use('/api/users', userRoutes);
+  app.use(express.static(publicPath));
 
-// Serve frontend in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'frontend/build'))); // Serve static files from React build folder
-  
-  app.get('*', (req, res) => 
-    res.sendFile(path.resolve(__dirname, '.', 'build', 'index.html')) // Catch all other routes and serve the React app
-  );
+  app.get("*", (req, res) => {
+    // const fileUrl = path.resolve(__dirname, "server", "build");
+    return res.sendFile(filePath);
+  });
 }
 
-// Error Handler
+// error handler
 app.use(errorHandler);
 
-// Start the server
-app.listen(port, () => console.log(`Server running on port ${port}`));
+const port = process.env.PORT;
+
+app.listen(port, () => console.log(`listening on port ${port}`));
