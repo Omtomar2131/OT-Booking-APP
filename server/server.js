@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
 const cors = require('cors');
+const path = require('path'); // For serving static files
 const connectDB = require('./config/db');
 const roomRoutes = require('./routes/roomRoutes');
 const bookingRoutes = require('./routes/bookingRoutes');
@@ -17,10 +18,13 @@ const port = process.env.PORT || 5000;
 connectDB();
 
 // Setup CORS
-app.use(cors({
-  origin: ['http://localhost:3000', 'https://ot-booking-app.onrender.com'], // Add local and deployed frontend URLs
-  credentials: true, // Allow cookies with requests
-}));
+const corsOptions = {
+    origin: '*', // Allow all origins
+    credentials: true, // Allow cookies with requests (if needed)
+  };
+  
+  app.use(cors(corsOptions));
+  
 
 // Middlewares
 app.use(cookieParser()); // Parse cookies
@@ -33,10 +37,19 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/auth', auth); // Authentication middleware
+app.use('/auth', auth); // Apply authentication middleware for specific routes
 app.use('/api/rooms', roomRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/users', userRoutes);
+
+// Serve frontend in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'frontend/build'))); // Serve static files from React build folder
+  
+  app.get('*', (req, res) => 
+    res.sendFile(path.resolve(__dirname, '.', 'build', 'index.html')) // Catch all other routes and serve the React app
+  );
+}
 
 // Error Handler
 app.use(errorHandler);
